@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Invite sent{% endblock %}
+
+{% block content %}
+  <h2>Invite sent</h2>
+  <p>Your invite was successfully sent to {{ invite.email }}.</p>
+  <p><a href="{% url send_invite %}">Send another!</a></p>
+{% endblock %}

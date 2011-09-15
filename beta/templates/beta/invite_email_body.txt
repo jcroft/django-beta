@@ -1,0 +1,5 @@
+Hey! {% if invite.user %}{{ invite.user.profile.name }} has invited you{% else %}You've been invited{% endif %} to {{ site.name }}!
+
+Learn more and sign up using this link:
+
+http://{{ site.domain }}{% url registration_register %}?activation_key={{ invite.activation_key }}

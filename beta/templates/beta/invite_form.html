@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load invites %}
+
+{% block title %}Send an invite{% endblock %}
+
+{% block content %}
+  <h2>Send an invite</h2>
+  <p>Invite your friends! As this site is in limited beta right now, only folks with an invite may sign up. If you know someone who'd like to give this site a trial run and might be willing to provide us some constructive feedback, please invite them!</p>
+  <form action="{% url send_invite %}" method="post">
+    {% for field in invite_form %}
+      {% include "snippets/forms/field.html" %}
+    {% endfor %}
+    <input class="button" type="submit" value="Send invite">
+  </form>
+  {% get_invites for user as invites %}
+  <p>You have {{ invites|length }} invites remaining.</p>
+{% endblock %}

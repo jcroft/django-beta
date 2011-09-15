@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>This site is coming soon</h2>
+  <p>If you're interested in this site, enter your email address below and we'll let you know when we launch.</p>
+  <form action="" method="post" accept-charset="utf-8">
+    {# {% csrf_token %} #}
+    {% for field in form %}
+      {% include "snippets/forms/field.html" %}
+    {% endfor %}
+    <input type="submit" value="Submit" />
+  </form>
+  <p>If you're a beta user, go ahead and <a href="{% url auth_login %}">sign in</a>.</p>
+{% endblock %}
